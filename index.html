@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  
 
 <header class="bg-yellow-600 text-white py-4">
     <div class="container mx-auto px-4">
@@ -20,31 +21,164 @@
         </ul>
       </nav>
     </div>
+
+
+    <style>
+
+      
+     .container {
+  margin: 0;
+}
+
+.order-now-btn {
+      position: absolute;
+      top: 8px; /* Adjust the top position as needed */
+      right: 690px; /* Adjust the right position as needed */
+      background-color: #ffc861;
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      border: #000 1px solid;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  padding: 0;
+}
+
+
+
+@media (max-width: 768px) {
+  .order-now-btn {
+    top: 200px;
+    right: 160px;
+    padding: 2px 5px;
+  }
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%; /* Add this line to ensure the slider takes the full height */
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire slider */
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-btn-left {
+  left: 10px;
+}
+
+.slider-btn-right {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  /* Mobile view adjustments */
+  .slider-btn {
+    padding: 3px;
+    font-size: 18px;
+  }
+}
+
+    </style>
+    
   </header>
 
+  <body>
+
   
-  
-<!-- Responsive Banner Image Section -->
-<section class="bg-no-repeat bg-cover bg-center h-48 sm:h-96 flex items-center" style="background-image: url('./banner.png'); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
-  <div class="container mx-auto text-white text-center">
-    <!-- Your content goes here -->
+
+
+<script>
+  let currentIndex = 0;
+  const intervalTime = 3000; // 3 seconds
+  let slideInterval;
+
+  function startAutoScroll() {
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(slideInterval);
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % document.querySelectorAll('.slider img').length;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + document.querySelectorAll('.slider img').length) % document.querySelectorAll('.slider img').length;
+    updateSlider();
+  }
+
+  function updateSlider() {
+    const slider = document.querySelector('.slider');
+    const slideWidth = document.querySelector('.slider img').clientWidth;
+    slider.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+  }
+
+  startAutoScroll();
+
+  // Stop auto-scroll on hover
+  const sliderContainer = document.querySelector('.slider-container');
+  sliderContainer.addEventListener('mouseenter', stopAutoScroll);
+  sliderContainer.addEventListener('mouseleave', startAutoScroll);
+</script>
+
+<hr><hr>
+<div class="container mx-auto my-8 p-4 bg-white shadow-md rounded-md">
+  <a href="https://www.zomato.com/bangalore/the-thai-chef-restaurant-1-kalyan-nagar-bangalore/order" class="order-now-btn" >Order Now</a>
+  <div class="slider-container">
+    <div class="slider">
+      <img src="thaicheflogo.png" alt="thai chef logo">
+      <img src="pearlmilk.png" alt="pearl milk">
+      <img src="chiken basi loffer.png" alt="chicken">
+      <!-- Add more images as needed -->
+    </div>
+    <hr>
+
+    <button class="slider-btn slider-btn-left" onclick="prevSlide()">‹</button>
+    <button class="slider-btn slider-btn-right" onclick="nextSlide()">›</button>
   </div>
-</section>
-
-
-<!-- Rest of your content goes here -->
-
-
-
-  
+</div>
   
 
-  <div class="h-screen bg-no-repeat bg-cover bg-center flex items-center justify-center" style="background-image: url('./thaichef.png');">
+<div class="h-screen bg-no-repeat bg-cover bg-right-sm lg:bg-center flex items-center justify-center" 
+     style="background-image: url('./thaichef.png');" 
+     md:bg-right-md lg:bg-center-lg xl:bg-left-xl>
     <div class="text-center text-white">
       <h1 class="text-4xl font-extrabold mb-4">Welcome to Thai Chef</h1>
       <p class="text-lg mb-8">Experience the finest flavors from Thailand</p>
       <a href="./menu.html" class="bg-yellow-500 text-gray-800 hover:bg-yellow-400 py-2 px-6 rounded-full text-lg font-semibold transition duration-300">Explore Menu</a>
     </div>
+</div>
 </div>
 
 <section class="container mx-auto my-8 p-8 bg-white shadow-md rounded-md text-center">
