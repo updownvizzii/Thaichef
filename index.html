@@ -11,17 +11,20 @@
 <body>
   
 
-<header class="bg-yellow-600 text-white py-4">
-    <div class="container mx-auto px-4">
-      <nav class="flex justify-between items-center">
-        <a href="index.html" class="text-xl font-bold">Thai Chef Restaurant</a>
-        <ul class="flex space-x-4">
-          <li><a href="./index.html" class="hover:text-gray-400">Home</a></li>
-          <li><a href="./menu.html" class="hover:text-gray-400">Menu</a></li>
+  <header class="bg-yellow-600 text-white py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <nav class="flex justify-between items-center w-full">
+        <a href="index.html" class="text-sm sm:text-xl font-bold">Thai Chef Restaurant</a>
+        <ul class="flex space-x-1 sm:space-x-4">
+          <li><a href="./index.html" class="text-sm sm:text-base hover:text-gray-400">Home</a></li>
+          <li><a href="./menu.html" class="text-sm sm:text-base hover:text-gray-400">Menu</a></li>
         </ul>
+        <a href="https://www.zomato.com/bangalore/the-thai-chef-restaurant-1-kalyan-nagar-bangalore/order" class="order-now-btn text-sm sm:text-base" >Order Now</a>
       </nav>
     </div>
+</header>
 
+   
 
     <style>
 
@@ -31,16 +34,13 @@
 }
 
 .order-now-btn {
-      position: absolute;
-      top: 8px; /* Adjust the top position as needed */
-      right: 690px; /* Adjust the right position as needed */
-      background-color: #ffc861;
-      color: rgb(0, 0, 0);
-      padding: 10px 20px;
-      border: #000 1px solid;
-      border-radius: 5px;
-      cursor: pointer;
-      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  background-color: #ffc861;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: #000 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .slider-container {
@@ -154,7 +154,7 @@
 
 <hr><hr>
 <div class="container mx-auto my-8 p-4 bg-white shadow-md rounded-md">
-  <a href="https://www.zomato.com/bangalore/the-thai-chef-restaurant-1-kalyan-nagar-bangalore/order" class="order-now-btn" >Order Now</a>
+  
   <div class="slider-container">
     <div class="slider">
       <img src="thaicheflogo.png" alt="thai chef logo">
